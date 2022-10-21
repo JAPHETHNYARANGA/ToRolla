@@ -9,7 +9,7 @@ This is a  simple ECommerce application developed using laravel.Apis Have been c
 ## ToRolla designs
 The application was first designed in figma. Here is a link to the design
 
-<p><a href="https://www.figma.com/file/E3TSq3ERfFjAzxjtjQpDcp/ToRolla?node-id=0%3A1"></a> </p>
+<p><a href="https://www.figma.com/file/E3TSq3ERfFjAzxjtjQpDcp/ToRolla?node-id=0%3A1">ToRolla Design</a> </p>
 
 
 ## Project Intallation
