@@ -11,6 +11,8 @@ The application was first designed in figma. Here is a link to the design
 
 <p><a href="https://www.figma.com/file/E3TSq3ERfFjAzxjtjQpDcp/ToRolla?node-id=0%3A1">ToRolla Design</a> </p>
 
+<p><a href="https://lucid.app/lucidchart/30ae06a7-ae9c-4e91-98d9-0e5a5a9eb72d/edit?invitationId=inv_97f6a89b-6cc0-48c8-9507-1c1016bbcc59&page=0_0#">ToRolla Database Design</a></p>
+
 
 ## Project Intallation
 
