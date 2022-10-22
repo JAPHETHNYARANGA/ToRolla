@@ -1,0 +1,24 @@
+*{
+    background-color: #36454F;
+    color: white;  
+}
+
+.header{
+    text-align: center;
+    font-weight: bold;
+}
+.details{
+    color: #5DA111;
+    font-weight: bold;
+}
+#email{
+    font-weight: bold;
+}
+#password{
+    font-weight: bold;
+}
+
+.register>a{
+    font-weight: bold;
+    text-decoration: none;
+}
