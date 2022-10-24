@@ -7,6 +7,7 @@ use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 
 class Authentication extends Controller
@@ -53,6 +54,9 @@ class Authentication extends Controller
             'password' =>'required'      
         ]);
         $user = new User();
+        $uuid = Str::uuid()->toString();
+        
+        $user ->user_id = $uuid;
         $user -> name = $request->name;
         $user -> email = $request->email;
         $user -> phone_number = $request->phone_number;

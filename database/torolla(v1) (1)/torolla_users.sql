@@ -16,34 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `products`
+-- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `products` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `product_name` varchar(100) DEFAULT NULL,
-  `product_description` varchar(500) DEFAULT NULL,
-  `product_location` varchar(100) DEFAULT NULL,
-  `product_category` varchar(100) DEFAULT NULL,
+  `user_id` varchar(300) DEFAULT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `phone_number` int(11) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `products`
+-- Dumping data for table `users`
 --
 
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'03911ab3-5531-4275-966f-501f58439d19','new','new@gmail.com',123456789,'$2y$10$sBUPPwGfvej/Sp3MzEQawu4JOIxk4IrOyDKcRjI9VQyElarHcasx.','2022-10-24 15:04:03','2022-10-24 15:04:03');
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-24 20:31:10
+-- Dump completed on 2022-10-24 21:04:59

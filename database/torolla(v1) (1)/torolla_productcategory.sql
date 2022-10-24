@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `productcategory`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `productcategory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
+  `user_id` varchar(300) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-24 20:31:10
+-- Dump completed on 2022-10-24 21:04:59
