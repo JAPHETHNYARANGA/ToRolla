@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Authentication;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('register', function(){
+//     return view('register');
+// });
+
+Route::get('forgotPassword', function(){
+    return view('forgotPassword');
 });
 
-Route::get('login', function(){
-    return view('login');
-});
-Route::get('register', function(){
-    return view('register');
-});
+
+
+Route::get('login', [Authentication::class, 'index']);
+
+Route::post('custom-login', [Authentication::class, 'customLogin'])->name('login.custom');
+
+Route::get('register', [Authentication::class, 'registration'])->name('register-user');
+
+Route::post('custom-registration', [Authentication::class, 'customRegistration'])->name('register.custom');
+
+Route::get('signout', [Authentication::class, 'signOut'])->name('signout');
