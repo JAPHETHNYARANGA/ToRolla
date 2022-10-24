@@ -49,14 +49,14 @@ class Authentication extends Controller
         $request->validate([
             'name' => 'required',
             'phone_number' =>'required',
-            'email' =>'required',
+            'email' =>'required|email|unique:users',
             'password' =>'required'      
         ]);
         $user = new User();
         $user -> name = $request->name;
         $user -> email = $request->email;
         $user -> phone_number = $request->phone_number;
-        $user -> password = $request->password;
+        $user -> password =Hash::make($request->password);
         $res = $user->save();
         if($res){
             return back() ->with('success', 'you have registered successfully');
