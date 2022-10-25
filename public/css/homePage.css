@@ -1,0 +1,25 @@
+.navbar{
+    background-color: #36454F;
+    
+}
+.navbar>span{
+    color: white;
+    margin-left: 20px;
+}
+
+.navbar>a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.top-links{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-left{
+    margin-left: 20px;
+    margin-top: 10px;
+}

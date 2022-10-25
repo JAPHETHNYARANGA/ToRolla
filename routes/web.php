@@ -39,6 +39,12 @@ Route::get('logout', [Authentication::class, 'logout']);
 
 Route::get('home', [Authentication::class,'homePageView']);
 
+Route::get('nationalities',function(){
+    $jsonData = file_get_contents("database/categories.json");
+    $json = json_decode($jsonData, true);
+    $data['nationalities'] = $json['nationalities'];
+});
+
 
 Route::get('forgotPassword', [Authentication::class, 'showForgetPasswordForm']);
 // Route::post('forget-password', [Authentication::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
