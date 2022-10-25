@@ -40,6 +40,9 @@
     </div>
   </div>
   
+  <div class="heading text-center">
+    <h4 class="featured-heading">Top Featured Products</h4>
+  </div>
 
 <table class="table">
     <thead>
