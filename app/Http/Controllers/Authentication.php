@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Request as FacadesRequest;
 use Illuminate\Support\Str;
 
 
@@ -21,24 +24,6 @@ class Authentication extends Controller
     {
         return view('login');
     }
-
-  
-
-    // public function customLogin(Request $request){
-    //     $request->validate([
-    //         'email'=>'required',
-    //         'password'=>'required'
-    //     ]);
-
-    //     $credentials = $request->only('email', 'password');
-    //     if(Auth::attempt($credentials)){
-    //         return redirect()->intended('homePage')
-    //         ->withSuccess('Signed in');
-    //     }
-    //     return redirect("login")->withSuccess('Login Failed Please Try Again');
-    // }
-
-    
 
      
      public function registration(){
@@ -63,37 +48,68 @@ class Authentication extends Controller
         $user -> password =Hash::make($request->password);
         $res = $user->save();
         if($res){
-            return back() ->with('success', 'you have registered successfully');
+            return redirect('login')->with('success', 'you have registered successfully');
         }else{
-            return back() ->with('fail', 'you have registered successfully');
+            return back() ->with('fail', 'Something went wrong. Please try again');
         }
-        return redirect('homePage')->withSuccess('Something went wrong');
-         echo "success";
+       
      }
      
-    //  public function create(array $data)
-    //  {   
-    //      return User::create([
-    //      'name' => $data['name'],
-    //      'phone_number' => $data['phone_number'],
-    //      'email' => $data['email'],
-    //      'password' => Hash::make($data['password'])
-    //      ]);
-    //  }
+     public function customLogin(Request $request){
+        $request->validate([
+            'email' =>'required|email',
+            'password' =>'required'      
+        ]);
+        
+        $credentials = $request->only('email', 'password');
+        if(Auth::attempt($credentials)){
+            return redirect()->intended('home')->withSuccess('Signed in');
+        }
+        return redirect("login")->withSuccess('Login details are not valid');
+        
+        // $user = User::where('email', '=', $request->email)->first();
+        
+        // if($user){
+        //     if(Hash::check($request->password,$user->password)){
+        //         $request ->session()->put('loginId', $user->id);
+        //         return redirect('home')->with('success', 'Logged in Successfully');
+        //     }else{
+        //         return back()->with('fail', 'Password does Not Match. Please try again');
+        //     }
+           
+        // }else{
+        //     return back()->with('fail', 'Something went wrong. Please try again');
+        // }
+     }
+
+     public function logout(Request $request){
+        Auth::logout();
+ 
+        $request->session()->invalidate();
      
-    //  public function homePage()
-    //  {
-    //     if(Auth::check()){
-    //         return view('homePage'); 
-    //     }
-    //     return redirect('login')->withSuccess('You are Not allowed to access this page');
-    //  }
+        $request->session()->regenerateToken();
+     
+        return Redirect('login');
+     }
 
-    //  public function signOut(){
-    //     Session::flush();
-    //     Auth::logout();
-  
-    //     return Redirect('login');
+     public function homePageView(){
+       
+        if(Auth::check()){
+            $user = Auth::user();
+            return view('homePage',['user'=>$user]);            
+        }
+        return redirect("login")->withSuccess('You are not allowed to access');
+     }
 
-    //  }
+     public function showForgetPasswordForm(){
+        
+       return view('forgetPassword');                    
+        
+     }
+
+     public function submitForgetPasswordForm(Request $request){
+        echo'success'; 
+     }
+
+    
 }

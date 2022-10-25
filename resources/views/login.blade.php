@@ -15,19 +15,25 @@
             <h3 class="details">Enter Your Details to Continue</h3>
 
             <form method="POST" action="{{ route('login.custom')}}">
+              @if(Session::has('success'))
+              <div class="alert alert-success">{{Session::get('success')}}</div>
+              @endif
+              @if(Session::has('fail'))
+              <div class="alert alert-danger">{{Session::get('fail')}}</div>
+              @endif
               @csrf
                 <div class="form-group mt-5">
                     <label for="email" id="email">Email</label>
                     
-                     <input type="email" class="form-control" id="email" placeholder="torolla@gmail.com" >
+                     <input type="email" class="form-control" id="email" placeholder="torolla@gmail.com" name='email'>
                      @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                      <span class="text-danger">{{ $errors->first('email') }}</span>
                      @endif
                   </div>
                 
                 <div class="form-group mt-5">
                     <label for="password" id="password">Password</label>
-                    <input type="password" class="form-control" id="password">
+                    <input type="password" class="form-control" id="password" name="password">
                     @if ($errors->has('password'))
                     <span class="text-danger">{{ $errors->first('password') }}</span>
                     @endif

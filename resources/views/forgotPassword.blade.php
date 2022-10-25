@@ -14,7 +14,7 @@
         <div class="text col ">
             <h3 class="details">Enter Email to Reset Password</h3>
 
-            <form>
+            {{-- <form action="{{ route('forget.password.post') }}" method="POST"> --}}
                 <div class="form-group mt-5">
                     <label for="email" id="email">  Email</label>
                     
