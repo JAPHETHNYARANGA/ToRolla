@@ -92,18 +92,11 @@ class Authentication extends Controller
         return Redirect('login');
      }
 
-     public function homePageView(){
-       
-        if(Auth::check()){
-            $user = Auth::user();
-            return view('homePage',['user'=>$user]);            
-        }
-        return redirect("login")->withSuccess('You are not allowed to access');
-     }
+  
 
      public function showForgetPasswordForm(){
         
-       return view('forgetPassword');                    
+       return view('forgotPassword');                    
         
      }
 
@@ -111,5 +104,6 @@ class Authentication extends Controller
         echo'success'; 
      }
 
+    
     
 }

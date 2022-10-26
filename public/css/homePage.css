@@ -24,6 +24,11 @@
     margin-top: 10px;
 }
 
+.btn-left>.btn>a{
+    text-decoration: none !important;
+    color: white;
+}
+
 .featured-heading{
     color: #5DA111;
     font-weight: bold;

@@ -26,7 +26,7 @@
 
 
 <div class="create-product-btn btn-left">
-    <Button class="btn btn-success" id="click">Add Product</Button>
+    <Button class="btn btn-success" id="click"><a href="addProduct">Add Product</a></Button>
 </div>
 
 <div class="dropdown btn-left btn-left">
