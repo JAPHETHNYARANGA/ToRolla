@@ -12,3 +12,28 @@
     text-decoration: none;
     color: white;
 }
+
+form{
+    width: 50%;
+    margin-top: 15px;
+    
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+      
+}
+
+form>.form-group>label{
+    font-weight: bold;
+    color: #5DA111;
+}
+
+form>.form-group>textarea{
+    resize: none;
+}
+
+form>.button>button{
+   margin-top: 20px;
+   background-color: #5DA111;
+}

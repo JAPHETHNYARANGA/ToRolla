@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Authentication;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteRegistrar;
@@ -56,3 +57,6 @@ Route::get('forgotPassword', [Authentication::class, 'showForgetPasswordForm']);
 // Route::post('forget-password', [Authentication::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
 // Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 // Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post'); -->
+
+
+Route::post('add-product', [ProductsController::class, 'addProduct'])->name('addProduct.post');

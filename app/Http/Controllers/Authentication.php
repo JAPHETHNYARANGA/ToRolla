@@ -67,19 +67,6 @@ class Authentication extends Controller
         }
         return redirect("login")->withSuccess('Login details are not valid');
         
-        // $user = User::where('email', '=', $request->email)->first();
-        
-        // if($user){
-        //     if(Hash::check($request->password,$user->password)){
-        //         $request ->session()->put('loginId', $user->id);
-        //         return redirect('home')->with('success', 'Logged in Successfully');
-        //     }else{
-        //         return back()->with('fail', 'Password does Not Match. Please try again');
-        //     }
-           
-        // }else{
-        //     return back()->with('fail', 'Something went wrong. Please try again');
-        // }
      }
 
      public function logout(Request $request){

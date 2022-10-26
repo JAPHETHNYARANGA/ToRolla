@@ -7,30 +7,43 @@
 
 @section('content')
 
-<div class="navbar">
-    <nav class="navbar navbar-light ">
-        <span class="navbar-brand mb-0 ml-6 h1">{{$user['name']}}</span>
-      </nav>
+<div class="addProduct">
+    <div class="navbar">
+        <nav class="navbar navbar-light ">
+            <span class="navbar-brand mb-0 ml-6 h1">{{$user['name']}}</span>
+          </nav>
+    
+          <a href="logout">Logout</a>
+    </div>
+    
+    @csrf
+    <form method="POST" action="{{ route('addProduct.post')}}" >
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" class="form-control" id="productName" name="productName" >
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Product Location</label>
+            <input type="text" class="form-control" id="productLocation" name="productLocation">
+          </div>
+    
+        <div class="form-group">
+          <label for="productDescription">Product Description</label>
+          <textarea class="form-control" id="productDescription" rows="3" name="productDescription"></textarea>
+        </div>
 
-      <a href="logout">Logout</a>
+        <div class="form-group mt-3">
+            <label for="exampleFormControlFile1">Example file input</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="productImage">
+          </div>
+
+        <div class="button text-center">
+            <button class="btn btn-success">Post</button>
+        </div>
+        
+      </form>
 </div>
 
-
-<form>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Product Name</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Product Location</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Product Description</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </form>
 
 
 
