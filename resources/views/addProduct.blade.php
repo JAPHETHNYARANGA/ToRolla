@@ -15,9 +15,9 @@
     
           <a href="logout">Logout</a>
     </div>
-    
-    @csrf
+  
     <form method="POST" action="{{ route('addProduct.post')}}" >
+        @csrf
         <div class="form-group">
           <label for="productName">Product Name</label>
           <input type="text" class="form-control" id="productName" name="productName" >
@@ -32,10 +32,10 @@
           <textarea class="form-control" id="productDescription" rows="3" name="productDescription"></textarea>
         </div>
 
-        <div class="form-group mt-3">
+        {{-- <div class="form-group mt-3">
             <label for="exampleFormControlFile1">Example file input</label>
             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="productImage">
-          </div>
+          </div> --}}
 
         <div class="button text-center">
             <button class="btn btn-success">Post</button>
