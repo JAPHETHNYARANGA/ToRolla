@@ -20,9 +20,7 @@
 .heading>h3{
     font-weight: bold;
 }
-.container>.products>{
+.container>.products{
     display: flex;
-    justify-content: center;
-    display: none;
-      
+    justify-content: center;      
 }

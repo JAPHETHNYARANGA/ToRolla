@@ -44,9 +44,8 @@ class ProductsController extends Controller
         if(Auth::check()){
             $user = Auth::user();
         
-            $product = Products::all();
-            // if(Auth::user()->user_id == Products::all()->user_id )
-            // $product = Auth::user()->Products()->get();
+            $product = Products::where('user_id','=',Auth::user()->user_id)->get();
+           
     
             return view('viewUsersProducts',['user'=>$user,'product'=>$product]);          
            }
