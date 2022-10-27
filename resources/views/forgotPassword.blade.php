@@ -25,7 +25,7 @@
                     <button class="btn btn-primary mt-5 text-center">Reset</button>
                   </div>
                 <div class="register text-center mt-3">
-                    <a href="login" ><h4>Have an account?Login here</h4></a>
+                    <a href="/" ><h4>Have an account?Login here</h4></a>
                 </div>
                   
             </form>   

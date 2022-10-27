@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
+
 
 class ProductsController extends Controller
 {
@@ -36,7 +36,7 @@ class ProductsController extends Controller
                 return back() ->with('fail', 'Something went wrong. Please try again');
             }         
            }
-          return redirect("login")->withSuccess('You are not allowed to access');
+          return redirect("/")->withSuccess('You are not allowed to access');
         
     }
     
@@ -49,8 +49,18 @@ class ProductsController extends Controller
     
             return view('viewUsersProducts',['user'=>$user,'product'=>$product]);          
            }
-          return redirect("login")->withSuccess('You are not allowed to access');
+          return redirect("/")->withSuccess('You are not allowed to access');
             
+    }
+
+    public function viewIndividualItems($id){
+        $user = Auth::user();
+        
+        $individualItem = Products::find($id);
+        return view('individualItem',['user'=>$user,'individualItem' =>$individualItem]);
+
+        // return Products::find($id)->get();
+     
     }
     
 }

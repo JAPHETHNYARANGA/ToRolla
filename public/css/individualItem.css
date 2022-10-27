@@ -1,0 +1,23 @@
+.navbar{
+    background-color: #36454F;
+    
+}
+.navbar>span{
+    color: white;
+    margin-left: 20px;
+}
+
+.navbar>a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.container>.topText{
+    
+    color: #5DA111;
+}
+.container>.topText>h4{
+    font-weight: bold;
+    
+}

@@ -17,7 +17,7 @@ class HomeController extends Controller
             return view('homePage',['user'=>$user, 'products'=>$products]);   
             
         }
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return redirect("/")->withSuccess('You are not allowed to access');
      }
 
       public function addProductFunction(){
@@ -29,7 +29,7 @@ class HomeController extends Controller
           return view('addProduct',['user'=>$user, 'products'=>$products]);    
                  
          }
-        return redirect("login")->withSuccess('You are not allowed to access');
+        return redirect("/")->withSuccess('You are not allowed to access');
         
       }
 

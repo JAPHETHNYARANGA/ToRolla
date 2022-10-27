@@ -3,6 +3,7 @@
 use App\Http\Controllers\Authentication;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Models\Products;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteRegistrar;
@@ -28,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('login', [Authentication::class, 'index']);
+Route::get('/', [Authentication::class, 'index']);
 
 Route::post('custom-login', [Authentication::class, 'customLogin'])->name('login.custom');
 
@@ -63,3 +64,5 @@ Route::post('add-product', [ProductsController::class, 'addProduct'])->name('add
 
 
 Route::get('myProducts', [ProductsController::class, 'viewUsersProducts']);
+
+Route::get('individual-item/{id}',[ProductsController::class, 'viewIndividualItems']);

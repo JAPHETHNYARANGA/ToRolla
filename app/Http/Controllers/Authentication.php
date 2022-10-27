@@ -65,7 +65,7 @@ class Authentication extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->intended('home')->withSuccess('Signed in');
         }
-        return redirect("login")->withSuccess('Login details are not valid');
+        return redirect("/")->withSuccess('Login details are not valid');
         
      }
 
@@ -76,7 +76,7 @@ class Authentication extends Controller
      
         $request->session()->regenerateToken();
      
-        return Redirect('login');
+        return Redirect('/');
      }
 
   

@@ -54,7 +54,7 @@
                     <button class="btn btn-primary mt-5 text-center" type="submit">Register</button>
                   </div>
                 <div class="register text-center mt-3">
-                    <a href="login"><h4>Already have an account?Login here</h4></a>
+                    <a href="/"><h4>Already have an account?Login here</h4></a>
                 </div>
                   
             </form>   
