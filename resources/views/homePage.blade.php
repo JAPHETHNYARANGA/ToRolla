@@ -7,6 +7,7 @@
 
 <div class="navbar">
     <nav class="navbar navbar-light ">
+        <span class="navbar-brand mb-0 ml-6 h1 home"><a href="home"><i class="fa fa-home" aria-hidden="true"></i></a></span>
         <span class="navbar-brand mb-0 ml-6 h1">{{$user['name']}}</span>
       </nav>
 
@@ -38,28 +39,26 @@
       <a class="dropdown-item" href="#">Another action</a>
       <a class="dropdown-item" href="#">Something else here</a>
     </div>
-  </div>
+</div>
   
   <div class="heading text-center">
     <h4 class="featured-heading">Top Featured Products</h4>
   </div>
 
-<table class="table">
-    <thead>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
-        <th>Action</th>
-    </thead> 
-    <tbody>
-        <tr>
-            <td>{{$user['name']}}</td>
-            <td>{{$user['phone_number']}}</td>
-            <td>{{$user['email']}}</td>
-            <td><a href="logout">Logout</a></td>
-        </tr>
-    </tbody>
-</table>
+    <div class="container">
+        <div class="products row">
+            @foreach($products as $item)
+            <div class="card col-4" style="width: 18rem;">
+                <img class="card-img-top" img src="{{ asset('Assets/register.png')}}" alt="Login Vector Image">
+                <div class="card-body text-center">
+                <p class="card-text">{{$item['product_name']}}</p>
+                <p class="card-text">{{$item['product_price']}}</p>
+                    <p class="card-text">{{$item['product_location']}}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
 
 @push('javascript')
 <script src="{{ asset('js/home.js') }}"></script>

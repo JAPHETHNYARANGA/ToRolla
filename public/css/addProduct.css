@@ -37,3 +37,15 @@ form>.button>button{
    margin-top: 20px;
    background-color: #5DA111;
 }
+
+button>a{
+    text-decoration: none;
+    color: white;
+}
+button>a:hover{
+    text-decoration: none;
+    color: white;
+}
+.addProduct>button{
+    background-color: #5DA111;
+}

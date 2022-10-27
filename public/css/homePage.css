@@ -33,3 +33,17 @@
     color: #5DA111;
     font-weight: bold;
 }
+
+.navbar>.navbar>.home{
+    
+    color: white;
+}
+
+.container>.products>.card{
+    padding: 10px !important;
+}
+
+.container>.products{
+    display: flex;
+    justify-content: center;
+}

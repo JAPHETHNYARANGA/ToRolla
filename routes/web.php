@@ -60,3 +60,6 @@ Route::get('forgotPassword', [Authentication::class, 'showForgetPasswordForm']);
 
 
 Route::post('add-product', [ProductsController::class, 'addProduct'])->name('addProduct.post');
+
+
+Route::get('myProducts', [ProductsController::class, 'viewUsersProducts']);

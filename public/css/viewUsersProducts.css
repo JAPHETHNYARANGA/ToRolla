@@ -1,0 +1,28 @@
+.navbar{
+    background-color: #36454F;
+    
+}
+.navbar>span{
+    color: white;
+    margin-left: 20px;
+}
+
+.navbar>a{
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.heading{
+    color: #5DA111;
+    
+}
+.heading>h3{
+    font-weight: bold;
+}
+.container>.products>{
+    display: flex;
+    justify-content: center;
+    display: none;
+      
+}

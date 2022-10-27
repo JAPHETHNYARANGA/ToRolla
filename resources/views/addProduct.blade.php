@@ -15,6 +15,8 @@
     
           <a href="logout">Logout</a>
     </div>
+    
+    <button class="btn btn-success mt-2 ml-2"><a href='myProducts'>My Products</a></button>
   
     <form method="POST" action="{{ route('addProduct.post')}}" >
         @csrf
@@ -26,7 +28,10 @@
             <label for="exampleFormControlInput1">Product Location</label>
             <input type="text" class="form-control" id="productLocation" name="productLocation">
           </div>
-    
+          <div class="form-group">
+            <label for="exampleFormControlInput1">ProductCategory</label>
+            <input type="text" class="form-control" id="productCategory" name="productCategory">
+          </div>
         <div class="form-group">
           <label for="productDescription">Product Description</label>
           <textarea class="form-control" id="productDescription" rows="3" name="productDescription"></textarea>
