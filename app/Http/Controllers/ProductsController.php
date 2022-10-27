@@ -59,7 +59,7 @@ class ProductsController extends Controller
         $individualItem = Products::find($id);
         return view('individualItem',['user'=>$user,'individualItem' =>$individualItem]);
 
-        // return Products::find($id)->get();
+       
      
     }
     

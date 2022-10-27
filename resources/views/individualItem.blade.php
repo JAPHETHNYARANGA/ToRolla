@@ -8,11 +8,11 @@
 @section('content')
 <div class="navbar">
     <nav class="navbar navbar-light ">
-        <span class="navbar-brand mb-0 ml-6 h1 home"><a href="home"><i class="fa fa-home" aria-hidden="true"></i></a></span>
+        <span class="navbar-brand mb-0 ml-6 h1 home"><a href="{{ route('home.custom') }}"><i class="fa fa-home" aria-hidden="true"></i></a></span>
         <span class="navbar-brand mb-0 ml-6 h1">{{$user['name']}}</span>
       </nav>
 
-      <a href="logout">Logout</a>
+      <a href="{{ route('logout.custom') }}">Logout</a>
 </div>
 
 

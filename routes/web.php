@@ -39,9 +39,9 @@ Route::post('custom-registration', [Authentication::class, 'customRegistration']
 
 Route::get('forgotPassword', function(){ return view('forgotPassword');});
 
-Route::get('logout', [Authentication::class, 'logout']);
+Route::get('logout', [Authentication::class, 'logout'])->name('logout.custom');
 
-Route::get('home', [HomeController::class,'homePageView']);
+Route::get('home', [HomeController::class,'homePageView'])->name('home.custom');
 
 
 Route::get('addProduct', [HomeController::class,'addProductFunction']);
