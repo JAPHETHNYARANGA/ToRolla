@@ -32,7 +32,7 @@
 
 <div class="dropdown btn-left btn-left">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown button
+      Categories
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="#">Action</a>
@@ -54,8 +54,8 @@
                     <img class="card-img-top" img src="{{ asset('Assets/register.png')}}" alt="Login Vector Image">
                     <div class="card-body text-center">
                     <p class="card-text">{{$item['product_name']}}</p>
-                    <p class="card-text">{{$item['product_price']}}</p>
-                        <p class="card-text">{{$item['product_location']}}</p>
+                    <p class="card-text">ksh : {{$item['product_price']}}</p>
+                        
                     </div>
                 </a>
                 </div>

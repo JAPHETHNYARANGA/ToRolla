@@ -19,7 +19,7 @@
 <div class="container">
     <div class="topText text-center">
         <h4 class="mt-2">{{$individualItem['product_name']}}</h4>
-        <h4 class="mt-2">{{$individualItem['product_price']}}</h4>
+        <h4 class="mt-2">ksh : {{$individualItem['product_price']}}</h4>
         <h4 class="mt-2">{{$individualItem['product_location']}}</h4>
     </div>
     

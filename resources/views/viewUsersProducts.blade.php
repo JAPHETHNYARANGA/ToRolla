@@ -26,7 +26,7 @@
             <img class="card-img-top" img src="{{ asset('Assets/register.png')}}" alt="Login Vector Image">
             <div class="card-body text-center">
               <p class="card-text">{{$item['product_name']}}</p>
-              <p class="card-text">{{$item['product_price']}}</p>
+              <p class="card-text">ksh : {{$item['product_price']}}</p>
               <p class="card-text">{{$item['product_location']}}</p>
             </div>
           </a>  

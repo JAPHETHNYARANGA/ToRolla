@@ -17,6 +17,7 @@ class ProductsController extends Controller
                 'productDescription' =>'required',
                 'productLocation' =>'required',
                 'productCategory' =>'required',
+                'productPrice' =>'required',
                 // 'productImage' =>'required',
             ]);
             $product = new Products();
@@ -26,6 +27,7 @@ class ProductsController extends Controller
             $product -> product_description = $request->productDescription;
             $product-> product_location = $request->productLocation;
             $product->product_category = $request->productCategory;
+            $product->product_price = $request->productPrice;
             // $user -> productCategory = $request->productImage;
             $res = $product->save();
            

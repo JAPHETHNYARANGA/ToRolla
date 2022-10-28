@@ -32,15 +32,21 @@
             <label for="exampleFormControlInput1">ProductCategory</label>
             <input type="text" class="form-control" id="productCategory" name="productCategory">
           </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">ProductPrice</label>
+            <input type="number" class="form-control" id="productPrice" name="productPrice">
+          </div>
         <div class="form-group">
           <label for="productDescription">Product Description</label>
           <textarea class="form-control" id="productDescription" rows="3" name="productDescription"></textarea>
         </div>
-
-        {{-- <div class="form-group mt-3">
-            <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="productImage">
-          </div> --}}
+  
+        <div class="input-group control-group increment mt-3" >
+          <input type="file" name="filename[]" class="form-control">
+          <div class="input-group-btn"> 
+            <button class="btn btn-success" type="button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+          </div>
+        </div>
 
         <div class="button text-center">
             <button class="btn btn-success">Post</button>
